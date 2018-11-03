@@ -22,39 +22,53 @@
              </div>
             <p:fieldset legend="Dados pessoais"> 
             
-                
+                <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5" >
+                   <div alignt="left" aligntText="left"> 
+                    
+              
                     <h:outputLabel for="nome" value="Nome:"></h:outputLabel>
                         <p:inputText style="width:450px" id="nome" value="#{pessoaBean.nome}"></p:inputText>
                           <h:outputLabel for="dtnascimento" value="Data de nascimento:"></h:outputLabel>
-                            <p:inputMask id="dtnascimento" value="#{pessoaBean.dtnascimento}" mask="99/99/9999 "/>
-                           
-                                   
-                           <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-                            <p:outputLabel for="sexo" value="Sexo:" />
-                               <p:selectOneMenu id="sexo" value="#{pessoaBean.sexo}">
+                            <p:inputMask id="dtnascimento" value="#{pessoaBean.dtnascimento}" mask="99/99/9999 "/>  
+                              <p:outputLabel for="sexo" value="Sexo:" />
+                                 <p:selectOneMenu id="sexo" value="#{pessoaBean.sexo}">
                                       <f:selectItem itemLabel="indefinido" itemValue="indefinido" />
                                       <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
                                        <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
                                     </p:selectOneMenu>
-                           </h:panelGrid>         
-                           <div align="left"> 
-                                  <p:outputLabel for="cpf" value="C.P.F:"></p:outputLabel>
-                                    <p:inputText id="cpf" value="#{pessoaBean.cpf}"></p:inputText>
-                                      <h:outputLabel for="endereco" value="Endereço:"></h:outputLabel>
-                                        <p:inputText  style="width: 450px " id="endereco" value="#{pessoaBean.endereco}"></p:inputText>
-                                          <h:outputLabel for="complemento" value="Complemento:"></h:outputLabel>
-                                            <p:inputText id="complemento" value="#{pessoaBean.complemento}"></p:inputText>
-                                    <br> </br>
-                                               <h:outputLabel for="bairro" value=" Bairro:"></h:outputLabel>
-                                                <p:inputText id="bairro" value="#{pessoaBean.bairro}"></p:inputText>
-                                                    <h:outputLabel for="cidade" value="Cidade:"></h:outputLabel>
-                                                        <p:inputText id="cidade" value="#{pessoaBean.cidade}"></p:inputText>  
-                                                             <h:outputLabel for="CEP" value="CEP:"></h:outputLabel>
-                                                                <p:inputText id="cep"></p:inputText>
-                                   <br> </br>
-                           </div>
+                                             <h:outputLabel for="email" value ="Email:"/>
+                                                <p:inputText id="email" value=""></p:inputText>
+                                
+                                        <p:outputLabel for="cpf" value="C.P.F:"></p:outputLabel>
+                                            <p:inputText id="cpf" value="#{pessoaBean.cpf}"></p:inputText>
+                                             <h:outputLabel for="telefone:" value="Telefone" ></h:outputLabel> 
+                                                    <p:inputMask id="telefone" value="" mask="99-99999999"></p:inputMask>
+                                                    
+                                                <h:outputLabel for="endereco" value="Endereço:"></h:outputLabel>
+                                                  <p:inputText  style="width: 450px " id="endereco" value="#{pessoaBean.endereco}"></p:inputText>
+                                                     <h:outputLabel for="CEP" value="CEP:"></h:outputLabel>
+                                                         <p:inputText id="cep"></p:inputText>
+                                                      
+                                
+                                     <h:outputLabel for="bairro" value=" Bairro:"></h:outputLabel>
+                                        <p:inputText id="bairro" value="#{pessoaBean.bairro}"></p:inputText>
+                                            <h:outputLabel for="cidade" value="Cidade:"></h:outputLabel>
+                                                <p:inputText id="cidade" value="#{pessoaBean.cidade}"></p:inputText>  
+                                
+                                   
+                                   <h:outputLabel for="login" value ="Login:"/>
+                                      <p:inputText id="login" value=""></p:inputText>
+                                        <h:outputText value="senha"></h:outputText> 
+                                          <p:password id="senha"  value="" feedback="true"></p:password>
+                                            
+                                            
+                                            
+                                           
+                                    
+                   </div>
+                </h:panelGrid>
                 <div align="center">
-                    <br> </br>
+                    <div separator="horizontal"> </div>
                                          <p:commandButton value="Salvar" action="index" style="width:250px" ></p:commandButton>
                                          <p:commandButton value="Editar"  style="width:250px" ></p:commandButton>
                                          <p:commandButton value="Voltar" action="index" style="width:250px" ></p:commandButton>
