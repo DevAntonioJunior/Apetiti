@@ -5,85 +5,97 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head >
-            
-        
-        
-        <title>Formulario de Cadastro</title>
-        
-    </h:head>
-    <h:body>
-            
-        <h:form >
-        
-            
-                
-            <div align="center" responsive="true">
-               <h1>Formulario de Cadastro</h1>
-             </div>
-            <p:fieldset legend="Dados pessoais"> 
-            
-                <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5" >
-                   <div alignt="left" aligntText="left"> 
-                    
-              
-                    <h:outputLabel for="nome" value="Nome:"></h:outputLabel>
-                        <p:inputText style="width:450px" id="nome" value="#{pessoaBean.nome}"></p:inputText>
-                          <h:outputLabel for="dtnascimento" value="Data de nascimento:"></h:outputLabel>
-                            <p:inputMask id="dtnascimento" value="#{pessoaBean.dtnascimento}" mask="99/99/9999 "/>  
-                              <p:outputLabel for="sexo" value="Sexo:" />
-                                 <p:selectOneMenu id="sexo" value="#{pessoaBean.sexo}">
-                                      <f:selectItem itemLabel="indefinido" itemValue="indefinido" />
-                                      <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
-                                       <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
-                                    </p:selectOneMenu>
-                                             <h:outputLabel for="email" value ="Email:"/>
-                                                <p:inputText id="email" value=""></p:inputText>
-                                
-                                        <p:outputLabel for="cpf" value="C.P.F:"></p:outputLabel>
-                                            <p:inputText id="cpf" value="#{pessoaBean.cpf}"></p:inputText>
-                                             <h:outputLabel for="telefone:" value="Telefone" ></h:outputLabel> 
-                                                    <p:inputMask id="telefone" value="" mask="99-99999999"></p:inputMask>
-                                                    
-                                                <h:outputLabel for="endereco" value="Endereço:"></h:outputLabel>
-                                                  <p:inputText  style="width: 450px " id="endereco" value="#{pessoaBean.endereco}"></p:inputText>
-                                                     <h:outputLabel for="CEP" value="CEP:"></h:outputLabel>
-                                                         <p:inputText id="cep"></p:inputText>
-                                                      
-                                
-                                     <h:outputLabel for="bairro" value=" Bairro:"></h:outputLabel>
-                                        <p:inputText id="bairro" value="#{pessoaBean.bairro}"></p:inputText>
-                                            <h:outputLabel for="cidade" value="Cidade:"></h:outputLabel>
-                                                <p:inputText id="cidade" value="#{pessoaBean.cidade}"></p:inputText>  
-                                
-                                   
-                                   <h:outputLabel for="login" value ="Login:"/>
-                                      <p:inputText id="login" value=""></p:inputText>
-                                        <h:outputText value="senha"></h:outputText> 
-                                          <p:password id="senha"  value="" feedback="true"></p:password>
-                                            
-                                            
-                                            
-                                           
-                                    
-                   </div>
-                </h:panelGrid>
-                <div align="center">
-                    <div separator="horizontal"> </div>
-                                         <p:commandButton value="Salvar" action="index" style="width:250px" ></p:commandButton>
-                                         <p:commandButton value="Editar"  style="width:250px" ></p:commandButton>
-                                         <p:commandButton value="Voltar" action="index" style="width:250px" ></p:commandButton>
-                </div>
-         
-            </p:fieldset>
-            
-        
-        </h:form>
-    </h:body>
-</html>
-            
-                            
-                            
-                            
-                          
-                            
+
+        <style type="text/css">
+            body{
+                background: url(img/login_fundo.png)no-repeat;
+            </style>            
+
+
+            <title>Formulario de Cadastro</title>
+
+        </h:head>
+        <h:body>
+
+            <h:form >
+
+
+
+                <div align="center" responsive="true">
+                    <p:panel id="basic"  style="width:600px; margin-top: 50px" >
+                            <h1>Formulario de Cadastro</h1>
+
+                            <p:fieldset legend="Dados pessoais"> 
+
+
+
+
+
+                                <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5" >
+                                    <div alignt="left" aligntText="left"> 
+
+                                    </div>
+                                </h:panelGrid>
+
+
+                                <div align="center">
+                                    <div separator="horizontal"> </div>
+                                    <p:inputText style="width:330px;margin-right:10px; margin-bottom: 15px" id="nome" value="#{pessoaBean.nome}" placeholder="Nome completo"  ></p:inputText> 
+                                    <p:selectOneMenu id="sexo" value="#{pessoaBean.sexo}"  >
+                                        <f:selectItem itemLabel="Sexo" itemValue="" />
+                                        <f:selectItem itemLabel="indefinido" itemValue="indefinido" />
+                                        <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                                        <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+                                    </p:selectOneMenu> 
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"> </div>
+                                    <p:inputMask id="dtnascimento" value="#{pessoaBean.dtnascimento}" mask="99/99/9999 " placeholder="Data de nascimento" />
+                                    <p:inputMask id="cpf" value="#{pessoaBean.cpf}" mask="999.999.999-99" placeholder="CPF" style="margin-left: 10px; margin-bottom: 15px" /> 
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"> </div>
+                                    <p:inputText id="email" value="" placeholder="E-mail"></p:inputText>
+                                    <p:inputMask id="telefone" value="" mask="(99)9999-9999" placeholder="Telefone" style="margin-left: 10px; margin-bottom: 15px" ></p:inputMask> 
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"> </div>
+                                    <p:inputText  style="width: 350px " id="endereco" value="#{pessoaBean.endereco}" placeholder="Endereço" ></p:inputText>
+                                    <p:inputMask id="cep" value="" mask="99999-999" placeholder="CEP" style="width: 90px ;margin-left: 10px; margin-bottom: 15px" ></p:inputMask> 
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"> </div>
+                                    <p:inputText id="bairro" value="#{pessoaBean.bairro}" placeholder="Bairro" ></p:inputText>  
+                                    <p:inputText id="cidade" value="#{pessoaBean.cidade}" placeholder="Cidade" style="margin-left: 10px; margin-bottom: 15px" ></p:inputText>                   
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"> </div>
+                                    <p:inputText id="login" value="" placeholder="Login"  ></p:inputText>
+                                    <p:password id="senha"  value="" feedback="true" placeholder="Senha" style="margin-left: 10px; margin-bottom: 15px"  ></p:password>
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"> </div>
+                                    <p:commandButton value="Salvar" action="index" style="width:250px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px" ></p:commandButton>
+                                    <p:commandButton value="Editar"  style="width:250px" ></p:commandButton>
+                                    <p:commandButton value="Voltar" action="index" style="width:250px" ></p:commandButton>
+                                </div>
+
+                            </p:fieldset>
+                        </p:panel>
+                    </div>
+                </h:form>
+            </h:body>
+        </html>
+
+
+
+
+
+
 

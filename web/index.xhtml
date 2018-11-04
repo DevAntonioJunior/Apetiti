@@ -5,23 +5,63 @@
       xmlns:p="http://primefaces.org/ui">
      
     <h:head>
-        <title>Facelet Title</title>
+        
+<style type="text/css">
+body{
+  background: url(img/login_fundo.png)no-repeat;
+}
+
+#logo {
+    
+    align-content: center;  
+}
+#senha {
+    
+    float: left;
+    padding: 10px;
+    height: 250px;
+    width: 250px;
+    background-color: #AFA;
+    text-align: center; 
+}
+
+</style>
+        <title>Login - Apetit</title>
+        
     </h:head>
     <h:body>
         <h:form>
-        <div align="center" responsive="true">
-             <p:panelGrid columns="1" style="width:250px;">
-               <h:outputLabel for="login" value="Login:"></h:outputLabel>
-                <p:inputText id="login"></p:inputText>
-                   <h:outputLabel for="senha" value="Senha:"></h:outputLabel>
-                       <p:inputText id="senha"></p:inputText>
-             </p:panelGrid>
-              <p:button value="Entrar!" style="width: 125px"></p:button>
-               <p:button value="Voltar" style="width: 125px"></p:button>
+            
+
+            
+        <div class="p-grid p-justify-center" align="center" responsive="true"  >
+    <p:panel id="basic"  style="width:300px;; margin-top: 150px" >
+        
+        <h:panelGrid columns="1" style="width:300px" cellpadding="1">
+            
+            <p:graphicImage id="logo" url="../img/Logo_Apetit.png" width="250px" height="96px"  />
+           
+            <p:inputText id="login" value="" placeholder="Digite seu Login"  style=" text-align: center; align-content: center; margin-top: 10px; width: 250px;" ></p:inputText>
+            
+            <p:password id="senha" value="" placeholder="Digite sua Senha" style="text-align: center; align-content: center; margin-top: 5px;width: 250px;"  />
+
+            
+            <p:button value="ENTRAR" style="width: 260px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center"  ></p:button>
+            <p:commandButton value="Primeiro Acesso" action="frm_cadastro" style="width:260px; background: #9800CB; color: white;font-family: roboto;margin-top: 5px; align-content: center" ></p:commandButton>
+        
+        
+        
+        </h:panelGrid>
+        <p:panelGrid columns="2" style="width:250px;">
+                        
+                       
+        </p:panelGrid>
+
+    </p:panel>
+    
                  <br></br>
-               
-                 <p:commandButton value="Cadastre-se" action="frm_cadastro" style="width:250px" ></p:commandButton>
                  
+                 <p:button value="Voltar ao Portal Apetit" style="width: 300px "></p:button>
             
         </div>
         </h:form>
