@@ -1,4 +1,4 @@
-package br.apetit.Apetiti_01.controller;
+package br.apetit.Apetiti_01.enity;
 
 
 import javax.faces.bean.ManagedBean; 
@@ -7,10 +7,10 @@ import javax.faces.bean.SessionScoped;
 
 
 
-@SessionScoped 
-@ManagedBean  
-public class PessoaBean {
-    
+
+
+public class ClienteDTO {
+    private int Idnome; 
     private String Nome;
     private int Dtnascimento; 
     private String sexo;
@@ -19,14 +19,27 @@ public class PessoaBean {
     private String Complemento; 
     private String Bairro; 
     private String Cidade; 
-    private String mensagem;
+    
 
+    public ClienteDTO(){};
+    
+    public ClienteDTO(int Idnome ){
+     this.Idnome = Idnome; 
+    }; 
     
     
-    public void Saudacao()
-    {
-        mensagem = "Ola," + Nome; 
-    }
+    public ClienteDTO( int Idnome, String Nome, int Dtnascimento, String sexo, int Cpf, String Endereco ,String Bairro,String Cidade, String Complemento ){
+    
+        this.Idnome = Idnome;
+        this.Nome = Nome; 
+        this.sexo = sexo; 
+        this.Endereco = Endereco; 
+        this.Dtnascimento = Dtnascimento; 
+        this.Bairro = Bairro; 
+        this.Cidade = Cidade; 
+        this.Cpf = Cpf; 
+        this.Complemento = Complemento; 
+    };
     
     public String getNome() {
         return Nome;
@@ -92,14 +105,14 @@ public class PessoaBean {
         this.Cidade = Cidade;
     }
 
-    public String getMensagem() {
-        return mensagem;
+    public int getIdnome() {
+        return Idnome;
     }
 
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
+    public void setIdnome(int Idnome) {
+        this.Idnome = Idnome;
     }
-    
-    
+
+   
     
 }
