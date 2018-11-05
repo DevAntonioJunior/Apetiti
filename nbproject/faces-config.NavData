@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="index.xhtml" x="121" y="44" zoom="false"/>
+        <Node id="frm_cadastro.xhtml" x="-101" y="169" zoom="true"/>
+        <Node id="frm_barraprogresso.xhtml" x="403" y="70" zoom="true"/>
+        <Node id="frm_principal.xhtml" x="132" y="296" zoom="true"/>
+        <Node id="frm_nutricionista.xhtml" x="429" y="189" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
