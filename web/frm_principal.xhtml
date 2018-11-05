@@ -7,22 +7,78 @@
         <title> Pagina Principal</title>
     </h:head>
     <h:body>
-        <p:layout>
-            <p:layout style="min-width:800px;min-height:800px;">
-         <p:layoutUnit position="west" resizable="true" size="100" minSize="40" maxSize="200">
-             <p:panel style="windth: 100px;height:100px">
-                 
-             </p:panel>
-             
-             <p:button value="Dieta" icon="ui-icon"></p:button>
-            </p:layoutUnit>
- 
-             <p:layoutUnit position="center">
-                 Center
-                </p:layoutUnit>
-            </p:layout>
+        <h:form>
             
-           </p:layout>
+     
+         <h:panelGrid columns="1"  style="windth:100%;height:100%" >
+                 
+                     <h2>insira uma foto</h2>
+                 
+         </h:panelGrid>
+                 
+             
+            <p:tabView orientation="left" style="width:100%;height:100%" >
+                    <p:tab title="Ficha nutricional">                    
+                             <h:panelGrid columns="2" cellpadding="10">
+                
+                                  <h:outputText value="dieta do cliente"/>
+                             </h:panelGrid>
+                     </p:tab>
+                
+                    <p:tab title="Agendar Nutricionista ">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                  <h:outputText value="cosultar nutricionista " />
+                
+                             </h:panelGrid>
+                    </p:tab>
+                         <p:tab title="Trocar nutricionista">
+                              <h:panelGrid columns="2" cellpadding="10">
+                                    <h:outputText value ="Bate Papo" />
+                
+                              </h:panelGrid>
+                        </p:tab>
+        
+                    <p:tab title="Dietas receitas ">
+                        <h:panelGrid columns="2" cellpadding="10">
+                
+                             <h:outputText value ="Dietas" />
+                        </h:panelGrid>
+                     </p:tab>
+        
+         <p:tab title="Meus relatorios">
+            <h:panelGrid columns="2" cellpadding="10">
+                
+                <h:outputText value ="relatorios" />
+            </h:panelGrid>
+        </p:tab>
+         <p:tab title="Bate papo">
+            <h:panelGrid columns="2" cellpadding="10">
+                
+                        <h:outputText value ="Bate Papo" />
+                    </h:panelGrid>
+                </p:tab>     
+                
+                <p:tab title="Configuraçoes">
+            <h:panelGrid columns="2" cellpadding="10">
+                
+                        <h:outputText value ="configuraçoes" />
+                    </h:panelGrid>
+                </p:tab> 
+                
+                <p:tab title="Sair">
+            <h:panelGrid columns="2" cellpadding="10">
+                
+                        <h:outputText value ="Sair" />
+                    </h:panelGrid>
+                </p:tab>     
+      
+        
+         </p:tabView>
+        
+             
+        
+            
+         </h:form>
        </h:body>
 </html>
 
