@@ -5,16 +5,35 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+
+        <style type="text/css">
+            body{
+                background: url(img/login_fundo.png)no-repeat;
+            }
+
+        </style>
+
+        <title>Iniciando - Apetit</title>
     </h:head>
     <h:body>
         <h:form>
-            <div align="center">
-                
-                <h3> <I>Apetit- Dieta saudavel e assistida</I> </h3>  
-                <p:progressBar id="progressBarClient" widgetVar="pbClient" style="width:700px"/>
+            <div class="p-grid p-justify-center" align="center" responsive="true"  >
+
+                <p:panel id="basic"  style="width:600px;background-color: white; margin-top: 150px;webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px;" >
+
+                    <br></br>  
+                    <div class="p-grid p-justify-center" align="center" responsive="true"  >
+                        <p:graphicImage id="logo" url="../img/Logo_Apetit.png" width="250px" height="96px"  />
+
+                        <h3> <I>Aguarde estamos iniciando o sistema para você</I> </h3> 
+
+                        <p:progressBar id="progressBarClient" widgetVar="pbClient" style="width:500px"/>
+                        <br></br> 
+
+                    </div>  
+                </p:panel>
             </div>
-    
+
         </h:form>
     </h:body>
 </html>
