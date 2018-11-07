@@ -55,13 +55,27 @@
                         <h:outputText value="Senha:"/>
                         <h:outputText value="************"/>
                         
+                        
+                                   
+                                    <p:commandButton value="Salvar" action="index" style="width:150px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px" ></p:commandButton>
+                                    <p:commandButton value="Editar"  style="width:150px" ></p:commandButton>
+                                    <p:commandButton value="Voltar" action="index" style="width:150px" ></p:commandButton>
+                                
+                        
 
                     </h:panelGrid>
                 </p:tab>
 
                 <p:tab title="Agendar Consulta ">
                     <h:panelGrid columns="2" cellpadding="10">
-                        <h:outputText value="Agendamento de Consulta " />
+                        <div align="center"> 
+                        <h3><i>Agendamento de Consulta</i></h3>
+                            <p:outputLabel for="inline" value="" />
+                             <p:calendar id="inline" value="#{calendarView.date1}" mode="inline" />
+                             <br> </br>
+                             <p:commandButton value="Salvar" action="index" style="width:100px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px" ></p:commandButton>
+                             <p:commandButton value="Editar"  style="width:100px" ></p:commandButton>
+                        </div>
 
                     </h:panelGrid>
                 </p:tab>

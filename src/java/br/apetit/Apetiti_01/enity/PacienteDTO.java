@@ -1,16 +1,16 @@
 package br.apetit.Apetiti_01.enity;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import org.primefaces.event.SelectEvent;
 
-import javax.faces.bean.ManagedBean; 
-import javax.faces.bean.SessionScoped;
 
-
-
-
-
-
-public class ClienteDTO {
-    private int Idnome; 
+@ManagedBean 
+public class PacienteDTO {
+    private int Idpaciente; 
     private String Nome;
     private int Dtnascimento; 
     private String sexo;
@@ -18,19 +18,20 @@ public class ClienteDTO {
     private String Endereco; 
     private String Complemento; 
     private String Bairro; 
-    private String Cidade; 
+    private String Cidade;
+    private Date Agconsulta; 
     
 
-    public ClienteDTO(){};
+    public PacienteDTO(){};
     
-    public ClienteDTO(int Idnome ){
-     this.Idnome = Idnome; 
+    public PacienteDTO(int Idpaciente ){
+     this.Idpaciente = Idpaciente; 
     }; 
     
     
-    public ClienteDTO( int Idnome, String Nome, int Dtnascimento, String sexo, int Cpf, String Endereco ,String Bairro,String Cidade, String Complemento ){
+    public PacienteDTO( int Idpaciente, String Nome, int Dtnascimento, String sexo, int Cpf, String Endereco ,String Bairro,String Cidade, String Complemento ){
     
-        this.Idnome = Idnome;
+        this.Idpaciente = Idpaciente;
         this.Nome = Nome; 
         this.sexo = sexo; 
         this.Endereco = Endereco; 
@@ -105,14 +106,31 @@ public class ClienteDTO {
         this.Cidade = Cidade;
     }
 
-    public int getIdnome() {
-        return Idnome;
+    public int getIdpaciente() {
+        return Idpaciente;
     }
 
     public void setIdnome(int Idnome) {
-        this.Idnome = Idnome;
+        this.Idpaciente = Idpaciente;
     }
 
-   
+    public Date getAgconsulta() {
+        return Agconsulta;
+    }
+
+    public void setAgconsulta(Date Agconsulta) {
+        this.Agconsulta = Agconsulta;
+    }
+ public void onDateSelect(SelectEvent event) {
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
+    }
+     
+   /* public void click() {
+        PrimeFaces.current().ajax().update("form:display");
+        PrimeFaces.current().executeScript("PF('dlg').show()");
+    }
+   */
     
 }
