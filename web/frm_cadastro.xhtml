@@ -22,7 +22,7 @@
 
 
                 <div align="center" responsive="true">
-                    <p:panel id="basic"  style="width:600px; margin-top: 50px" >
+                    <p:panel id="basic"  style="width:600px; margin-top: 50px">
                             <h1>Formulario de Cadastro</h1>
 
                             <p:fieldset legend="Dados pessoais"> 
@@ -31,7 +31,7 @@
 
 
 
-                                <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5" >
+                                <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5">
                                     <div alignt="left" aligntText="left"> 
 
                                     </div>
@@ -40,7 +40,7 @@
 
                                 <div align="center">
                                     <div separator="horizontal"> </div>
-                                    <p:inputText style="width:330px;margin-right:10px; margin-bottom: 15px" id="nome" value="#{clienteDTO.nome}" placeholder="Nome completo"  ></p:inputText> 
+                                    <p:inputText style="width:330px;margin-right:10px; margin-bottom: 15px" id="nome" value="#{clienteDTO.nome}" placeholder="Nome completo"></p:inputText> 
                                     <p:selectOneMenu id="sexo" value="#{clienteDTO.sexo}"  >
                                         <f:selectItem itemLabel="Sexo" itemValue="" />
                                         <f:selectItem itemLabel="indefinido" itemValue="indefinido" />
@@ -50,40 +50,40 @@
                                 </div>
 
                                 <div align="center">
-                                    <div separator="horizontal"> </div>
-                                    <p:inputMask id="dtnascimento" value="#{clienteDTO.dtnascimento}" mask="99/99/9999 " placeholder="Data de nascimento" />
-                                    <p:inputMask id="cpf" value="#{clienteDTO.cpf}" mask="999.999.999-99" placeholder="CPF" style="margin-left: 10px; margin-bottom: 15px" /> 
+                                    <div separator="horizontal"></div>
+                                    <p:inputMask id="dtnascimento" value="#{clienteDTO.dtnascimento}" mask="99/99/9999 " placeholder="Data de nascimento"/>
+                                    <p:inputMask id="cpf" value="#{clienteDTO.cpf}" mask="999.999.999-99" placeholder="CPF" style="margin-left: 10px; margin-bottom: 15px"/> 
                                 </div>
 
                                 <div align="center">
-                                    <div separator="horizontal"> </div>
+                                    <div separator="horizontal"></div>
                                     <p:inputText id="email" value="" placeholder="E-mail"></p:inputText>
-                                    <p:inputMask id="telefone" value="" mask="(99)9999-9999" placeholder="Telefone" style="margin-left: 10px; margin-bottom: 15px" ></p:inputMask> 
+                                    <p:inputMask id="telefone" value="" mask="(99)9999-9999" placeholder="Telefone" style="margin-left: 10px; margin-bottom: 15px"></p:inputMask> 
                                 </div>
 
                                 <div align="center">
-                                    <div separator="horizontal"> </div>
-                                    <p:inputText  style="width: 350px " id="endereco" value="#{clienteDTO.endereco}" placeholder="Endereço" ></p:inputText>
-                                    <p:inputMask id="cep" value="" mask="99999-999" placeholder="CEP" style="width: 90px ;margin-left: 10px; margin-bottom: 15px" ></p:inputMask> 
+                                    <div separator="horizontal"></div>
+                                    <p:inputText  style="width: 350px " id="endereco" value="#{clienteDTO.endereco}" placeholder="Endereço"></p:inputText>
+                                    <p:inputMask id="cep" value="" mask="99999-999" placeholder="CEP" style="width: 90px ;margin-left: 10px; margin-bottom: 15px"></p:inputMask> 
                                 </div>
 
                                 <div align="center">
                                     <div separator="horizontal"> </div>
                                     <p:inputText id="bairro" value="#{clienteDTO.bairro}" placeholder="Bairro" ></p:inputText>  
-                                    <p:inputText id="cidade" value="#{clienteDTO.cidade}" placeholder="Cidade" style="margin-left: 10px; margin-bottom: 15px" ></p:inputText>                   
+                                    <p:inputText id="cidade" value="#{clienteDTO.cidade}" placeholder="Cidade" style="margin-left: 10px; margin-bottom: 15px"></p:inputText>                   
                                 </div>
 
                                 <div align="center">
-                                    <div separator="horizontal"> </div>
-                                    <p:inputText id="login" value="" placeholder="Login"  ></p:inputText>
-                                    <p:password id="senha"  value="" feedback="true" placeholder="Senha" style="margin-left: 10px; margin-bottom: 15px"  ></p:password>
+                                    <div separator="horizontal"></div>
+                                    <p:inputText id="login" value="#{clienteDTO.login}" placeholder="Login"></p:inputText>
+                                    <p:password id="senha"  value="#{clienteDTO.senha}" feedback="true" placeholder="Senha" style="margin-left: 10px; margin-bottom: 15px"></p:password>
                                 </div>
 
                                 <div align="center">
-                                    <div separator="horizontal"> </div>
-                                    <p:commandButton value="Salvar" action="index" style="width:250px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px" ></p:commandButton>
+                                    <div separator="horizontal"></div>
+                                    <p:commandButton value="Salvar" action="Frmindex" style="width:250px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px"></p:commandButton>
                                     <p:commandButton value="Editar"  style="width:250px" ></p:commandButton>
-                                    <p:commandButton value="Voltar" action="index" style="width:250px" ></p:commandButton>
+                                    <p:commandButton value="Voltar" action="Frmindex" style="width:250px"></p:commandButton>
                                 </div>
 
                             </p:fieldset>
