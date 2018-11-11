@@ -13,7 +13,8 @@ import javax.faces.bean.SessionScoped;
 public class PacienteController {
     
     private PacienteDTO paciente = new PacienteDTO();
-    private List<PacienteDTO> pacientes = new ArrayList<>(); 
+    private List<PacienteDTO> pacientes = new ArrayList<>();
+    private PacienteDAO pacientedao = new PacienteDAO(); 
     
        public void adicionar(){
     
@@ -26,7 +27,16 @@ public class PacienteController {
          paciente = new PacienteDTO(); 
                  
        }
-      
+       public void Editar(){
+       pacientedao.Editar(paciente);
+       pacientes = null; 
+       
+       }
+       public void pesquisar(){
+           pacientes = pacientedao.buscar();
+       
+       }
+         
     public PacienteDTO getPaciente() {
         return paciente;
     }

@@ -13,8 +13,10 @@ public class DadosConexao {
     
     
         private static Connection conexaoBD;
-        private static String url = "" ;
-        public static Connection Conectar(){
+        private static final String url ="" ;
+        private static final String usuario=""; 
+        private static final String senha=""; 
+        public static final Connection Conectar(){    //  metodo para a brir a conexao com o banco de dados
            if(conexaoBD == null){
                try{
                    Class.forName("com.mysql.jdbc.Driver"); 
@@ -28,7 +30,7 @@ public class DadosConexao {
             }
            return conexaoBD;   
         }
-        public static void fechaConexaoBd(){
+        public static void fechaConexaoBd(){  // metodo para fechar  a conexao com o banco de dados 
                 if(conexaoBD != null){
                     try{
                         conexaoBD.close(); 

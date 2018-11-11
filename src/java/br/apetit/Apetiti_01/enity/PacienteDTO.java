@@ -10,7 +10,7 @@ import org.primefaces.event.SelectEvent;
 
 @ManagedBean 
 public class PacienteDTO {
-    private int Idpaciente; 
+    private int Idpaciente ; 
     private String Nome;
     private Date Dtnascimento; 
     private String sexo;
@@ -23,6 +23,7 @@ public class PacienteDTO {
     private String Bairro; 
     private  String Login; 
     private String Senha; 
+    private String Dieta; 
     
     private String Cidade;
  
@@ -37,7 +38,7 @@ public class PacienteDTO {
     }; 
     
     
-    public PacienteDTO( int Idpaciente, String Nome, Date Dtnascimento, String sexo, String Cpf, String Endereco ,String Bairro,String Cidade, String Complemento, String Email , String Telefone , String Cep , String Login , String Senha){
+    public PacienteDTO( int Idpaciente, String Nome, Date Dtnascimento, String sexo, String Cpf, String Endereco ,String Bairro,String Cidade, String Complemento, String Email , String Telefone , String Cep , String Login , String Senha, String Dieta){
     
         this.Idpaciente = Idpaciente;
         this.Nome = Nome; 
@@ -53,6 +54,7 @@ public class PacienteDTO {
         this.Cep = Cep; 
         this.Login = Login; 
         this.Senha = Senha; 
+        this.Dieta = Dieta; 
         
     };
     
@@ -124,7 +126,7 @@ public class PacienteDTO {
         return Idpaciente;
     }
 
-    public void setIdnome(int Idnome) {
+    public void setIdpaciente(int Idpaciente) {
         this.Idpaciente = Idpaciente;
     }
 
@@ -181,6 +183,14 @@ public class PacienteDTO {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
+    }
+
+    public String getDieta() {
+        return Dieta;
+    }
+
+    public void setDieta(String Dieta) {
+        this.Dieta = Dieta;
     }
      
 }
