@@ -24,10 +24,7 @@ public class PacienteDTO {
     private  String Login; 
     private String Senha; 
     private String Dieta; 
-    
-    private String Cidade;
- 
-    
+    private String Cidade; 
     private Date Agconsulta; 
     
 
@@ -38,7 +35,8 @@ public class PacienteDTO {
     }; 
     
     
-    public PacienteDTO( int Idpaciente, String Nome, Date Dtnascimento, String sexo, String Cpf, String Endereco ,String Bairro,String Cidade, String Complemento, String Email , String Telefone , String Cep , String Login , String Senha, String Dieta){
+    public PacienteDTO( int Idpaciente, String Nome, Date Dtnascimento, String sexo, String Cpf, String Endereco, String Cep ,String Bairro,String Cidade, String Complemento, String Telefone, String Login,String Senha,String Email, String Dieta ){
+
     
         this.Idpaciente = Idpaciente;
         this.Nome = Nome; 
@@ -55,8 +53,7 @@ public class PacienteDTO {
         this.Login = Login; 
         this.Senha = Senha; 
         this.Dieta = Dieta; 
-        
-    };
+   };
     
     public String getNome() {
         return Nome;
@@ -139,6 +136,7 @@ public class PacienteDTO {
     }
 
 
+
     
     public String getEmail() {
         return Email;
@@ -183,14 +181,22 @@ public class PacienteDTO {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
-    }
+        
+    }    
+
 
     public String getDieta() {
         return Dieta;
     }
-
+     
     public void setDieta(String Dieta) {
         this.Dieta = Dieta;
     }
-     
 }
+     
+    
+    
+
+
+     
+

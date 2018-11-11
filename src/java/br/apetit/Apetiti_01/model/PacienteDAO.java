@@ -98,13 +98,7 @@ public class PacienteDAO {
            } catch (SQLException ex) {
                Logger.getLogger(PacienteDAO.class.getName());
                return null; 
-           }
-              
-               
-               
-           
-               
-               
+           }     
                
            } 
            
