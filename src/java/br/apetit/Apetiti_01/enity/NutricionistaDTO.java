@@ -22,11 +22,15 @@ public class NutricionistaDTO {
     private String Cidade; 
     private Date consultaAg;
     private String Formacao; 
+    private String CRN; 
+    
 
 
-    public NutricionistaDTO()
+    public NutricionistaDTO(){};
+    
+    public NutricionistaDTO(int IdNutricionista)
  {
-   paciente = new PacienteDTO();
+   this.IdNutricionista = IdNutricionista;
  }
     
     
@@ -183,6 +187,14 @@ public class NutricionistaDTO {
 
     public void setFormacao(String Formacao) {
         this.Formacao = Formacao;
+    }
+
+    public String getCRN() {
+        return CRN;
+    }
+
+    public void setCRN(String CRN) {
+        this.CRN = CRN;
     }
     
 }

@@ -19,7 +19,7 @@ public class PacienteDAO {
     {
         try{
         Connection conexao = DadosConexao.Conectar();
-        PreparedStatement ps = conexao.prepareCall("INSERT INTO TB_paciente('id_nome','nome','sexo','dtnascimento','Cpf','Email','Telefone','endereco','Cep','Bairro','Cidade','Login','Senha')");
+        PreparedStatement ps = conexao.prepareCall("INSERT INTO TB_paciente('id_Paciente','nome','sexo','dtnascimento','Cpf','Email','Telefone','endereco','Cep','Bairro','Cidade','Login','Senha')");
         ps.setString(1, paciente.getNome());
         ps.setString(2, paciente.getSexo());
         ps.setDate(3, new Date(paciente.getDtnascimento().getTime()));
@@ -44,7 +44,7 @@ public class PacienteDAO {
      {
         try{
         Connection conexao = DadosConexao.Conectar();
-        PreparedStatement ps = conexao.prepareCall("UPDATE TB_paciente set 'nome=?','sexo=?','dtnascimento=?','Cpf=?','Email=?','Telefone=?','endereco=?','Cep=?','Bairro=?','Cidade=?','Login=?','Senha=?' where id=?");
+        PreparedStatement ps = conexao.prepareCall("UPDATE TB_paciente set 'nome=?','sexo=?','dtnascimento=?','Cpf=?','Email=?','Telefone=?','endereco=?','Cep=?','Bairro=?','Cidade=?','Login=?','Senha=?' where id_Paciente=?");
         ps.setInt(13, paciente.getIdpaciente()); 
         ps.setString(1, paciente.getNome());
         ps.setString(2, paciente.getSexo());
@@ -94,13 +94,15 @@ public class PacienteDAO {
                    pacientes.add(paciente);
                    }
                      return pacientes; 
-               
            } catch (SQLException ex) {
                Logger.getLogger(PacienteDAO.class.getName());
                return null; 
            }     
-               
            } 
-           
+       
    }
+                 
+           
+               
+               
   

@@ -16,6 +16,11 @@ public class PacienteController {
     private List<PacienteDTO> pacientes = new ArrayList<>();
     private PacienteDAO pacientedao = new PacienteDAO(); 
     
+    
+       public void AutenticaPaciente(){
+      
+       
+       }
        public void adicionar(){
     
         pacientes.add(paciente); 
