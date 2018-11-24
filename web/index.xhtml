@@ -2,64 +2,57 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-     
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        
-<style type="text/css">
-body{
-  background: url(img/login_fundo.png)no-repeat;
-}
 
-#logo {
-    
-    align-content: center;  
-}
-#senha {
-    
-    float: left;
-    padding: 10px;
-    height: 250px;
-    width: 250px;
-    background-color: #AFA;
-    text-align: center; 
-}
-
+        <style tyle="text/css">
+    .animated .ui-progressbar-value { 
+        background-image: url("#{resource['demo/images/pbar-ani.gif']}"); 
+    }
 </style>
-        <title>Login - Apetit</title>
-        
-    </h:head>
-    <h:body>
-        <h:form>
-        <div class="p-grid p-justify-center" align="center" responsive="true"  >
-        <p:panel id="basic"  style="width:300px;; margin-top: 150px" >
-        
-            <h:panelGrid columns="1" style="width:300px" cellpadding="1">
-            
-                <p:graphicImage id="logo" url="../img/Logo_Apetit.png" width="250px" height="96px"  />
-           
-                     <p:inputText id="login"  placeholder="Digite seu Login"  style=" text-align: center; align-content: center; margin-top: 10px; width: 250px;" ></p:inputText>
-            
-                     <p:password id="senha"  placeholder="Digite sua Senha" style="text-align: center; align-content: center; margin-top: 5px;width: 250px;"  />
 
+        <style type="text/css">
+            body{
+                background: url(img/login_fundo.png)no-repeat;
+            }
             
-                    <p:commandButton value="ENTRAR" style="width: 260px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center" action="Frmprinncipal"></p:commandButton>
-                    <p:commandButton value="Primeiro Acesso"  style="width:260px; background: #9800CB; color: white;font-family: roboto;margin-top: 5px; align-content: center" action="frmCadastrar" ajax="false" ></p:commandButton>
-        
-            </h:panelGrid>
-        <p:panelGrid columns="2" style="width:250px;">
-        </p:panelGrid>
-    </p:panel>
-                 <br></br>
-                 <p:button value="Voltar ao Portal Apetit" style="width: 300px "></p:button>
-        </div>
+            
+        </style>
+        <style tyle="text/css">
+    .animated .ui-progressbar-value { 
+        background-image: url("#{resource['demo/images/pbar-ani.gif']}"); 
+    }
+</style>
+ 
+
+
+        <title>Iniciando - Apetit</title>
+    </h:head>
+     <h:body>
+        <h:form>
+            <div class="p-grid p-justify-center" align="center" responsive="true"  >
+
+                <p:panel id="basic"  style="width:600px;background-color: white; margin-top: 150px;webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px;" >
+
+                    <br></br>  
+                    <div class="p-grid p-justify-center" align="center" responsive="true"  >
+                        <p:graphicImage id="logo" url="../img/Logo_Apetit.png" width="250px" height="96px"  />
+                        <h3> <I>Bem vido ao Apetit</I> </h3> 
+                        
+                        <h:commandLink value="Ir para Apetit " action="Vai_Decisao"></h:commandLink>
+          
+                    </div>  
+                </p:panel>
+            </div>
         </h:form>
     </h:body>
 </html>
-        
-        
+
+                                
                         
                        
+                
 
     
                  

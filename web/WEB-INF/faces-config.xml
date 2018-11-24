@@ -6,25 +6,80 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>frmCadastrar</from-outcome>
-            <to-view-id>/frm_cadastro.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>FrmPrincipal</from-outcome>
-            <to-view-id>/frm_principal.xhtml</to-view-id>
+            <from-outcome>Vai_Decisao</from-outcome>
+            <to-view-id>/Frm_decisao.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/frm_cadastro.xhtml</from-view-id>
+        <from-view-id>/Frm_decisao.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>Frmindex</from-outcome>
+            <from-outcome>Volta_index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>Vai_LoginNutricionista</from-outcome>
+            <to-view-id>/Frm_loginNutricionista.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>Vai_LogPaciente</from-outcome>
+            <to-view-id>/Frm_loginPaciente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Frm_loginNutricionista.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Volta_Nutri_decisao</from-outcome>
+            <to-view-id>/Frm_decisao.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>Vai_Cadastro_Nutri</from-outcome>
+            <to-view-id>/frm_cadastronutri.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>Vai_NutricionistaPrincipal</from-outcome>
+            <to-view-id>/frm_nutricionista.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/frm_cadastronutri.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Volta_Cadastro_Nutri</from-outcome>
+            <to-view-id>/Frm_loginNutricionista.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/frm_nutricionista.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>LogoutNutricionista</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/frm_principal.xhtml</from-view-id>
+        <from-view-id>/Frm_loginPaciente.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>SairPrincipal</from-outcome>
+            <from-outcome>Volta_Paci_decisao</from-outcome>
+            <to-view-id>/Frm_decisao.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>Vai_Cadastro_paciente</from-outcome>
+            <to-view-id>/frm_cadastroPaciente.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>Vai_PacientePrincipal</from-outcome>
+            <to-view-id>/frm_Paciente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/frm_cadastroPaciente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Volta_Cadastro_paciente</from-outcome>
+            <to-view-id>/Frm_loginPaciente.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/frm_Paciente.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>LogoutPaciente</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>

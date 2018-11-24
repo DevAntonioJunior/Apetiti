@@ -1,12 +1,59 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <style type="text/css">
+            body{
+                background: url(img/login_fundo.png)no-repeat;
+            }
+            
+            
+        </style>
+        <style tyle="text/css">
+    .animated .ui-progressbar-value { 
+        background-image: url("#{resource['demo/images/pbar-ani.gif']}"); 
+    }
+</style>
+
+        <title>Iniciando - Apetit</title>
     </h:head>
+
     <h:body>
-        Hello from Facelets
+        <h:form>
+            <div class="p-grid p-justify-center" align="center" responsive="true"  >
+
+                <p:panel id="basic"  style="width:600px;background-color: white; margin-top: 150px;webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px;" >
+
+                    <br></br>  
+                    <div class="p-grid p-justify-center" align="center" responsive="true"  >
+                        <p:graphicImage id="logo" url="../img/Logo_Apetit.png" width="250px" height="96px"  />
+                        <h3> <I>pergunta para o usuario</I> </h3>
+                         <h:commandLink value="Paciente" action="Vai_LogPaciente"/>
+                           <h:commandLink value="Nutricionista" action="Vai_LoginNutricionista"/>
+                    </div>  
+                </p:panel>
+            </div>
+        </h:form>
     </h:body>
 </html>
+                      
+                        
+
+                                
+                        
+  
+ 
+
+
+
+                       
+                        
+
+                     
+                        
+                       
+                        
 

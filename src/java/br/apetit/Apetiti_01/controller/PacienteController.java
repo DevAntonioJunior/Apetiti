@@ -4,8 +4,10 @@ import br.apetit.Apetiti_01.enity.PacienteDTO;
 import br.apetit.Apetiti_01.model.PacienteDAO;
 import java.util.List;
 import java.util.ArrayList;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 
 @ManagedBean
@@ -25,8 +27,10 @@ public class PacienteController {
     
         pacientes.add(paciente); 
         new PacienteDAO().salvar(paciente);
-        paciente = new PacienteDTO(); 
-    }
+        paciente = new PacienteDTO();  
+       FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Paciente cadastrado com sucesso!", "Pacinete cadastrado com sucesso!"));  
+        }
+       
        public void excluir(){
          pacientes.remove(paciente); 
          paciente = new PacienteDTO(); 
