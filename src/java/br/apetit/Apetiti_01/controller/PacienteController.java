@@ -19,7 +19,15 @@ public class PacienteController {
     private PacienteDAO pacientedao = new PacienteDAO(); 
     
     
-       public void AutenticaPaciente(){
+       public String LogarPaciente(String Login, String senha ){
+           if(Login.equals(Login)&& (senha.equals(Login)))
+           {
+               return "Vai_PacientePrincipal"; 
+               
+               
+            } else {
+               return "Vai_LoginNutricionista";
+        }
       
        
        }
