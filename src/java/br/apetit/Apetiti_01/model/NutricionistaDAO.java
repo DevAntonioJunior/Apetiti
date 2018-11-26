@@ -114,4 +114,21 @@ public class NutricionistaDAO {
         }
        
         }
+    
+    
+      public Integer LogarnoSistema (String Login ,String senha) 
+      {
+          try{
+           Connection conexao = DadosConexao.Conectar(); 
+           PreparedStatement ps = conexao.prepareStatement("Select login,senha from Tb_Nutricionista where  login=? senha=?");
+           ps.setString(1, Login);
+           ps.setString(2, senha);
+           ResultSet resultset = ps.executeQuery(); 
+            if( resultset.next()){
+             return resultset.getInt("ativo");    
+           }
+            }catch (SQLException ex){
+          }
+      return -1; 
+      }
 }

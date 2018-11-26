@@ -38,12 +38,12 @@ body{
             
                 <p:graphicImage id="logo" url="../img/Logo_Apetit.png" width="250px" height="96px"  />
            
-                     <p:inputText id="login"  placeholder="Digite seu Login"  style=" text-align: center; align-content: center; margin-top: 10px; width: 250px;" ></p:inputText>
+                <p:inputText id="login" value="#{pacienteController.paciente.login}"  placeholder="Digite seu Login"  style=" text-align: center; align-content: center; margin-top: 10px; width: 250px;" ></p:inputText>
             
-                     <p:password id="senha"  placeholder="Digite sua Senha" style="text-align: center; align-content: center; margin-top: 5px;width: 250px;"  />
+                <p:password id="senha" value="#{pacienteController.paciente.senha}"  placeholder="Digite sua Senha" style="text-align: center; align-content: center; margin-top: 5px;width: 250px;"  />
 
             
-                    <p:commandButton value="ENTRAR" style="width: 260px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center" action="Frmprinncipal"></p:commandButton>
+                <p:commandButton value="ENTRAR" action="#{pacienteController.AutenticaLogin()}" style="width: 260px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center" ></p:commandButton>
                     <p:commandButton value="Primeiro Acesso"  action="Vai_Cadastro_paciente" style="width:260px; background: #9800CB; color: white;font-family: roboto;margin-top: 5px; align-content: center"  ajax="false" ></p:commandButton>
         
             </h:panelGrid>
