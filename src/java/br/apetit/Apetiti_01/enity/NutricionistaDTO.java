@@ -1,7 +1,9 @@
 package br.apetit.Apetiti_01.enity;
 
 import java.util.Date;
+import javax.faces.bean.ManagedBean;
 
+@ManagedBean 
 
 public class NutricionistaDTO {
     
