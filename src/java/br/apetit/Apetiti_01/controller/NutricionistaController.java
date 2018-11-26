@@ -44,7 +44,7 @@ public class NutricionistaController {
     
     
     
-    public void Adicionar_nutri(){
+    public void Salvar_nutricionista(){
             
         nutricionistas.add(nutricionista);
         new NutricionistaDAO().Salvar_nutri(nutricionista);

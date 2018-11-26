@@ -19,7 +19,7 @@ public class PacienteDAO {
     {
         try{
         Connection conexao = DadosConexao.Conectar();
-        PreparedStatement ps = conexao.prepareCall("INSERT INTO TB_paciente('id_Paciente','nome','sexo','dtnascimento','Cpf','Email','Telefone','endereco','Cep','Bairro','Cidade','Login','Senha')");
+        PreparedStatement ps = conexao.prepareCall("INSERT INTO tb_paciente('id_paciente','nome_paciente','cpf','dtnascimento','sexo','login','senha','altura','peso','email','','login','senha')");
         ps.setString(1, paciente.getNome());
         ps.setString(2, paciente.getSexo());
         ps.setDate(3, new Date(paciente.getDtnascimento().getTime()));
@@ -44,7 +44,7 @@ public class PacienteDAO {
      {
         try{
         Connection conexao = DadosConexao.Conectar();
-        PreparedStatement ps = conexao.prepareCall("UPDATE TB_paciente set 'nome=?','sexo=?','dtnascimento=?','Cpf=?','Email=?','Telefone=?','endereco=?','Cep=?','Bairro=?','Cidade=?','Login=?','Senha=?' where id_Paciente=?");
+        PreparedStatement ps = conexao.prepareCall("UPDATE tb_paciente set 'nome_paciente=?','cpf=?','dtnascimento=?','sexo=?','login=?','senha=?','altura=?','peso=?','email=?','login=?','senha=?' where id_paciente=?");
         ps.setInt(13, paciente.getIdpaciente()); 
         ps.setString(1, paciente.getNome());
         ps.setString(2, paciente.getSexo());
@@ -70,7 +70,7 @@ public class PacienteDAO {
        {
         try {
             Connection conexao = DadosConexao.Conectar();
-            PreparedStatement ps = conexao.prepareStatement("delete from Tb_paciente where id = ?");
+            PreparedStatement ps = conexao.prepareStatement("delete from tb_paciente where id = ?");
             ps.setInt(1, Idpaciente); 
             ps.execute();
         } catch (SQLException ex) {
@@ -103,7 +103,7 @@ public class PacienteDAO {
       {
           try{
            Connection conexao = DadosConexao.Conectar(); 
-           PreparedStatement ps = conexao.prepareStatement("Select login,senha from Tb_paciente where  login=? senha=?");
+           PreparedStatement ps = conexao.prepareStatement("Select login,senha from tb_paciente where  login=? senha=?");
            ps.setString(1, Login);
            ps.setString(2, senha);
            ResultSet resultset = ps.executeQuery(); 

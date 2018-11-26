@@ -40,8 +40,8 @@
 
                                 <div align="center">
                                     <div separator="horizontal"> </div>
-                                    <p:inputText style="width:330px;margin-right:10px; margin-bottom: 15px" id="nome" value="#{NutricionistaDTO.nome}" placeholder="Nome completo"></p:inputText> 
-                                    <p:selectOneMenu id="sexo" value="#{NutricionistaDTO.sexo}"  >
+                                    <p:inputText style="width:330px;margin-right:10px; margin-bottom: 15px" id="nome" value="#{nutricionistaConntroller.nuticionista.nome}" placeholder="Nome completo"></p:inputText> 
+                                    <p:selectOneMenu id="sexo" value="#{nutricionistaComtroller.nutricionista.sexo}"  >
                                         <f:selectItem itemLabel="Sexo" itemValue="" />
                                         <f:selectItem itemLabel="indefinido" itemValue="indefinido" />
                                         <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
@@ -51,39 +51,39 @@
 
                                 <div align="center">
                                     <div separator="horizontal"></div>
-                                    <p:inputMask id="dtnascimento" value="#{NutricionistaController.nutricionista.dtnascimento}" mask="99/99/9999 " placeholder="Data de nascimento"/>
-                                    <p:inputMask id="cpf" value="#{NutricionistaController.nutricionista.cpf}" mask="999.999.999-99" placeholder="CPF" style="margin-left: 10px; margin-bottom: 15px"/> 
+                                    <p:inputMask id="dtnascimento" value="#{nutricionistaController.nutricionista.dtnascimento}" mask="99/99/9999 " placeholder="Data de nascimento"/>
+                                    <p:inputMask id="cpf" value="#{nutricionistaController.nutricionista.cpf}" mask="999.999.999-99" placeholder="CPF" style="margin-left: 10px; margin-bottom: 15px"/> 
                                 </div>
 
                                 <div align="center">
                                     <div separator="horizontal"></div>
-                                    <p:inputText id="email" value="#{NutricionistaController.nutricionista.email}" placeholder="E-mail"></p:inputText>
-                                    <p:inputMask id="telefone" value="#{NutricionistaController.nutricionista.telefone}" mask="(99)9999-9999" placeholder="Telefone" style="margin-left: 10px; margin-bottom: 15px"></p:inputMask> 
+                                    <p:inputText id="email" value="#{nutricionistaController.nutricionista.email}" placeholder="E-mail"></p:inputText>
+                                    <p:inputMask id="telefone" value="#{nutricionistaController.nutricionista.telefone}" mask="(99)9999-9999" placeholder="Telefone" style="margin-left: 10px; margin-bottom: 15px"></p:inputMask> 
                                 </div>
 
                                 <div align="center">
                                     <div separator="horizontal"></div>
-                                    <p:inputText  style="width: 350px " id="endereco" value="#{NutricionistaController.nutricionista.endereco}" placeholder="Endereço"></p:inputText>
-                                    <p:inputMask id="cep" value="#{NutricionistaController.nutricionista.cep}" mask="99999-999" placeholder="CEP" style="width: 90px ;margin-left: 10px; margin-bottom: 15px"></p:inputMask> 
+                                    <p:inputText  style="width: 350px " id="endereco" value="#{nutricionistaController.nutricionista.endereco}" placeholder="Endereço"></p:inputText>
+                                    <p:inputMask id="cep" value="#{nutricionistaController.nutricionista.cep}" mask="99999-999" placeholder="CEP" style="width: 90px ;margin-left: 10px; margin-bottom: 15px"></p:inputMask> 
                                 </div>
 
                                 <div align="center">
                                     <div separator="horizontal"> </div>
-                                    <p:inputText id="bairro" value="#{NutricionistaController.nutricionista.bairro}" placeholder="Bairro" ></p:inputText>  
-                                    <p:inputText id="cidade" value="#{NutricionistaController.nutricionista.cidade}" placeholder="Cidade" style="margin-left: 10px; margin-bottom: 15px"></p:inputText>                   
+                                    <p:inputText id="bairro" value="#{nutricionistaController.nutricionista.bairro}" placeholder="Bairro" ></p:inputText>  
+                                    <p:inputText id="cidade" value="#{nutricionistaController.nutricionista.cidade}" placeholder="Cidade" style="margin-left: 10px; margin-bottom: 15px"></p:inputText>                   
                                 </div>
 
                                 <div align="center">
                                     <div separator="horizontal"></div>
-                                    <p:inputText id="login" value="#{NutricionistaController.nutricionista.login}" placeholder="Login"></p:inputText>
-                                    <p:password id="senha"  value="#{NutricionistaController.nutricionista.senha}" feedback="true" placeholder="Senha" style="margin-left: 10px; margin-bottom: 15px"></p:password>
+                                    <p:inputText id="login" value="#{nutricionistaController.nutricionista.login}" placeholder="Login"></p:inputText>
+                                    <p:password id="senha"  value="#{nutricionistaController.nutricionista.senha}" feedback="true" placeholder="Senha" style="margin-left: 10px; margin-bottom: 15px"></p:password>
                                 </div>
 
                                 <div align="center">
                                     <div separator="horizontal"></div>
-                                    <p:commandButton value="Salvar" action="#{NutricionistaController.Salvar}" style="width:250px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px"></p:commandButton>
-                                    <p:commandButton value="Editar"  action="#{NuticionistaController.Editar}" style="width:250px" ></p:commandButton>
-                                    <p:commandButton value="Voltar" action="/index" style="width:250px"></p:commandButton>
+                                    <p:commandButton value="Salvar" action="#{nutricionistaController.salvar_nutricionista}" style="width:250px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px"></p:commandButton>
+                                    <p:commandButton value="Editar"  action="#{nuticionistaController.Editar}" style="width:250px" ></p:commandButton>
+                                    <p:commandButton value="Voltar" action="VoltacadastroNutri" style="width:250px"></p:commandButton>
                                 </div>
 
                             </p:fieldset>

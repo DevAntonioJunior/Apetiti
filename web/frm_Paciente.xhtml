@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title> Pagina Principal</title>
     </h:head>
@@ -19,50 +20,78 @@
                 <p:tab title="Ficha Nutricional"  >                    
                     <h:panelGrid columns="2" cellpadding="5" >
 
-                        <h:outputText value="Nome:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
-                        
-                        <h:outputText value="CPF:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
-                        
-                        <h:outputText value="Nascimento:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
-                        
-                        <h:outputText value="Sexo:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
-                        
-                        <h:outputText value="E-mail:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
-                        
-                        <h:outputText value="Telefone:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
-                       
-                        <h:outputText value="Endereço:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
-                        
-                        <h:outputText value="CEP:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
+                          <div align="center" responsive="true">
+                    <p:panel id="basic"  style="width:600px; margin-top: 50px">
+                            
 
-                        <h:outputText value="Bairro:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
+                            <p:fieldset legend="Dados do paciente"> 
 
-                        <h:outputText value="Cidade"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
-                        
-                        <h:outputText value="Login:"/>
-                        <h:outputText value="*SUBSTITUA POR UM DADO DO BANCO DE DADOS*"/>
 
-                        <h:outputText value="Senha:"/>
-                        <h:outputText value="************"/>
+
+
+                                <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5">
+                                    <div alignt="left" aligntText="left"> 
+
+                                    </div>
+                                </h:panelGrid>
+
+
+                                <div align="center">
+                                    <div separator="horizontal"> </div>
+                                    <p:inputText style="width:330px;margin-right:10px; margin-bottom: 15px" id="nome" value="#{pacienteController.paciente.nome}" placeholder="Nome completo"></p:inputText> 
+                                    <p:selectOneMenu id="sexo" value="#{pacienteController.paciente.sexo}"  >
+                                        <f:selectItem itemLabel="indefinido" itemValue="indefinido" />
+                                        <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                                        <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+                                    </p:selectOneMenu> 
+                                        
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"></div>
+                                    <p:inputMask id="dtnascimento" value="#{pacienteController.paciente.dtnascimento}" mask="99/99/9999 " placeholder="Data de nascimento"/>
+                                    <p:inputMask id="cpf" value="#{pacienteController.paciente.cpf}" mask="999.999.999-99" placeholder="CPF" style="margin-left: 10px; margin-bottom: 15px"/> 
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"></div>
+                                    <p:inputText id="email" value="#{pacienteController.paciente.email}" placeholder="E-mail"></p:inputText>
+                                    <p:inputMask id="telefone" value="#{pacienteController.paciente.telefone}" mask="(99)9999-9999" placeholder="Telefone" style="margin-left: 10px; margin-bottom: 15px"></p:inputMask> 
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"></div>
+                                    <p:inputText  style="width: 350px " id="endereco" value="#{pacienteController.paciente.endereco}" placeholder="Endereço"></p:inputText>
+                                    <p:inputMask id="cep" value="#{pacienteController.paciente.cep}" mask="99999-999" placeholder="CEP" style="width: 90px ;margin-left: 10px; margin-bottom: 15px"></p:inputMask> 
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"> </div>
+                                    <p:inputText id="bairro" value="#{pacienteController.paciente.bairro}" placeholder="Bairro" ></p:inputText>  
+                                    <p:inputText id="cidade" value="#{pacienteController.paciente.cidade}" placeholder="Cidade" style="margin-left: 10px; margin-bottom: 15px"></p:inputText>                   
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"></div>
+                                    <p:inputText id="login" value="#{pacienteController.paciente.login}" placeholder="Login"></p:inputText>
+                                    <p:password id="senha"  value="#{pacienteController.paciente.senha}" feedback="true" placeholder="Senha" style="margin-left: 10px; margin-bottom: 15px"></p:password>
+                                </div>
+
+                                <div align="center">
+                                    <div separator="horizontal"></div>
+                                    <p:commandButton value="Salvar" action="#{pacienteController.editar}"  style="width:250px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px"></p:commandButton>
+                                    <h:commandButton value="Cancelar"  action="VoltaCadastropaciente" style="width:250px"></h:commandButton>
+                                </div>
+                            </p:fieldset>
+                        </p:panel>
+                    </div>
+                                    
+                                   
+
                         
                         
                                    
-                                    <p:commandButton value="Salvar" action="index" style="width:150px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px" ></p:commandButton>
-                                    <p:commandButton value="Editar"  style="width:150px" ></p:commandButton>
-                                    <p:commandButton value="Voltar" action="index" style="width:150px" ></p:commandButton>
-                                
-                        
-
+                                   
                     </h:panelGrid>
                 </p:tab>
 

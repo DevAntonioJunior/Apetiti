@@ -13,14 +13,14 @@ public class DadosConexao {
     
     
         private static Connection conexaoBD;
-        private static final String url ="" ;
-        private static final String usuario=""; 
-        private static final String senha=""; 
+        private static final String URL_CONEXAO = "jdbc://mysql://localhost:3306/bd_apetit"; 
+        private static final String USUARIO ="root"; 
+        private static final String SENHA ="root"; 
         public static final Connection Conectar(){    //  metodo para a brir a conexao com o banco de dados
            if(conexaoBD == null){
                try{
                    Class.forName("com.mysql.jdbc.Driver"); 
-                    conexaoBD = DriverManager.getConnection(null); 
+                    conexaoBD = DriverManager.getConnection(URL_CONEXAO,USUARIO,SENHA);  
                    } catch(SQLException ex){
                            Logger.getLogger(DadosConexao.class.getName()).log(Level.SEVERE, null, ex);
                    } catch (ClassNotFoundException ex) {

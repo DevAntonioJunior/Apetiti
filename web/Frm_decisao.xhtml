@@ -30,9 +30,12 @@
                     <br></br>  
                     <div class="p-grid p-justify-center" align="center" responsive="true"  >
                         <p:graphicImage id="logo" url="../img/Logo_Apetit.png" width="250px" height="96px"  />
-                        <h3> <I>pergunta para o usuario</I> </h3>
-                         <h:commandLink value="Paciente" action="Vai_LogPaciente"/>
-                           <h:commandLink value="Nutricionista" action="Vai_LoginNutricionista"/>
+                        <h3> <I>Selecione o tipo de acesso</I> </h3>
+                        
+                         <p:commandButton value="PACIENTE" style="width: 260px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center" action="Vai_LogPaciente"></p:commandButton>
+                         <p:commandButton value="NUTRICIONISTA"  style="width:260px; background: #9800CB; color: white;font-family: roboto;margin-top: 5px; align-content: center" action="Vai_LoginNutricionista" ajax="false" ></p:commandButton>
+
+        
                     </div>  
                 </p:panel>
             </div>

@@ -43,7 +43,7 @@
     <navigation-rule>
         <from-view-id>/frm_cadastronutri.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>Volta_Cadastro_Nutri</from-outcome>
+            <from-outcome>VoltacadastroNutri</from-outcome>
             <to-view-id>/Frm_loginNutricionista.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
@@ -52,6 +52,10 @@
         <navigation-case>
             <from-outcome>LogoutNutricionista</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh_nutricionista</from-outcome>
+            <to-view-id>/frm_nutricionista.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -72,7 +76,9 @@
     <navigation-rule>
         <from-view-id>/frm_cadastroPaciente.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>VoltaCadastropaciente</from-outcome>
+
+            <from-outcome>Volta_Login_paciente</from-outcome>
+
             <to-view-id>/Frm_loginPaciente.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
@@ -81,6 +87,10 @@
         <navigation-case>
             <from-outcome>LogoutPaciente</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh_paciente</from-outcome>
+            <to-view-id>/frm_Paciente.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

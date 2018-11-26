@@ -8,6 +8,11 @@
     </h:head>
     <h:body>
         <h:form>
+            
+            <div>
+                <p:graphicImage id="logo" url="../img/Logo_Apetit.png" width="182px" height="70px" style="margin-left: 40px; margin-bottom: 15px; margin-top: 10px" />
+
+            </div>
 
             <p:tabView orientation="left" style="width:100%;height:100%" >
                 <p:tab title="Ficha Nutricionista"  >                    
@@ -51,9 +56,9 @@
                         
                         
                                    [
-                                    <p:commandButton value="Salvar" action="#{pacienteController.Salvar}"style="width:150px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px" ></p:commandButton>
+                                    <p:commandButton value="Salvar" action="#{NutricionstaController.salvar_nutricionista}"style="width:150px; background: #61CF06; color: white;font-family: roboto;margin-top: 10px; align-content: center;margin-bottom: 10px" ></p:commandButton>
                                     <p:commandButton value="Editar" action="#{nutricionistaController.editar_nutri}" style="width:150px" ></p:commandButton>
-                                    <p:commandButton value="Voltar" action="" style="width:150px" ></p:commandButton>
+                                    <p:commandButton value="Voltar" action="Volta_nutricionista" style="width:150px" ></p:commandButton>
                                 
                         
 

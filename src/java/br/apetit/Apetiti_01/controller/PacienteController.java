@@ -41,12 +41,12 @@ public class PacienteController {
         }        
         
         
-       public void adicionar(){
+       public void SalvarPaciente(){
     
         pacientes.add(paciente); 
         new PacienteDAO().salvar(paciente);
         paciente = new PacienteDTO();  
-       FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Paciente cadastrado com sucesso!", "Pacinete cadastrado com sucesso!"));  
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Paciente cadastrado com sucesso!", "Pacinete cadastrado com sucesso!"));  
         }
        
        public void excluir(){
