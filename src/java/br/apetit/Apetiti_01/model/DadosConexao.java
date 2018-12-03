@@ -13,9 +13,9 @@ public class DadosConexao {
     
     
         private static Connection conexaoBD;
-        private static final String URL_CONEXAO = "jdbc://mysql://localhost:3306/bd_apetit"; 
+        private static final String URL_CONEXAO = "jdbc:mysql://localhost:3306/bd_apetit?zeroDateTimeBehavior=convertToNul"; 
         private static final String USUARIO ="root"; 
-        private static final String SENHA ="root"; 
+        private static final String SENHA =""; 
         public static final Connection Conectar(){    //  metodo para a brir a conexao com o banco de dados
            if(conexaoBD == null){
                try{

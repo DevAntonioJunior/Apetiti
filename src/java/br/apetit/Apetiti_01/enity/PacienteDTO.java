@@ -2,15 +2,19 @@ package br.apetit.Apetiti_01.enity;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Objects;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import org.primefaces.event.SelectEvent;
 
 
 @ManagedBean 
+@SessionScoped
+
 public class PacienteDTO {
-    private int Idpaciente ; 
+    private Integer Idpaciente ; 
     private String Nome;
     private Date Dtnascimento; 
     private String sexo;
@@ -21,21 +25,23 @@ public class PacienteDTO {
     private String Cep; 
     private String Complemento; 
     private String Bairro; 
-    private  String Login; 
+    private String Login; 
     private String Senha; 
     private String Dieta; 
     private String Cidade; 
     private Date Agconsulta; 
+    private double peso; 
+    private String altura;
     
 
     public PacienteDTO(){};
     
-    public PacienteDTO(int Idpaciente ){
+    public PacienteDTO(Integer Idpaciente ){
      this.Idpaciente = Idpaciente; 
     }; 
     
     
-    public PacienteDTO( int Idpaciente, String Nome, Date Dtnascimento, String sexo, String Cpf, String Endereco, String Cep ,String Bairro,String Cidade, String Complemento, String Telefone, String Login,String Senha,String Email, String Dieta ){
+    public PacienteDTO( int Idpaciente, String Nome, Date Dtnascimento, String sexo, String Cpf, String Endereco, String Cep ,String Bairro,String Cidade,String Telefone, String Login,String Senha,String Email ){
 
     
         this.Idpaciente = Idpaciente;
@@ -48,11 +54,9 @@ public class PacienteDTO {
         this.Bairro = Bairro; 
         this.Cidade = Cidade; 
         this.Cpf = Cpf; 
-        this.Complemento = Complemento;
         this.Cep = Cep; 
         this.Login = Login; 
-        this.Senha = Senha; 
-        this.Dieta = Dieta; 
+        this.Senha = Senha;     
    };
     
     public String getNome() {
@@ -134,9 +138,6 @@ public class PacienteDTO {
     public void setAgconsulta(Date Agconsulta) {
         this.Agconsulta = Agconsulta;
     }
-
-
-
     
     public String getEmail() {
         return Email;
@@ -192,6 +193,33 @@ public class PacienteDTO {
     public void setDieta(String Dieta) {
         this.Dieta = Dieta;
     }
+
+    
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 13 * hash + Objects.hashCode(this.Idpaciente);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PacienteDTO other = (PacienteDTO) obj;
+        if (!Objects.equals(this.Idpaciente, other.Idpaciente)) {
+            return false;
+        }
+        return true;
+    }
+   
 }
      
     

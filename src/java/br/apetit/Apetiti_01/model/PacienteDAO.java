@@ -15,14 +15,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PacienteDAO {
-    public void salvar(PacienteDTO paciente)
+    
+    
+    public void salvar(PacienteDTO paciente) 
     {
         try{
         Connection conexao = DadosConexao.Conectar();
-        PreparedStatement ps = conexao.prepareCall("INSERT INTO tb_paciente('id_paciente','nome_paciente','cpf','dtnascimento','sexo','login','senha','altura','peso','email','','login','senha')");
+        PreparedStatement ps = conexao.prepareStatement("INSERT INTO paciente ('nome_paciente','cpf','dtnascimento','sexo','login','senha',nome_rua,cidade,email,num_celular)VALUES (?,?,?,?, ?, ?, ?,?,?,?,?,?,?)");
         ps.setString(1, paciente.getNome());
         ps.setString(2, paciente.getSexo());
-        ps.setDate(3, new Date(paciente.getDtnascimento().getTime()));
+        ps.setDate(3, new java.sql.Date(paciente.getDtnascimento().getTime()));
         ps.setString(4, paciente.getCpf());
         ps.setString(5, paciente.getEmail());
         ps.setString(6, paciente.getTelefone());
@@ -32,13 +34,14 @@ public class PacienteDAO {
         ps.setString(10, paciente.getCidade());
         ps.setString(11, paciente.getLogin());
         ps.setString(12, paciente.getSenha());
-        ps.execute(); 
+        ps.execute();  
         DadosConexao.fechaConexaoBd();
         }catch (SQLException ex){
             Logger.getLogger(PacienteDAO.class.getName()).log(Level.SEVERE, null, ex); 
         
         }
     }
+   
         
        public void  Editar(PacienteDTO paciente) 
      {
@@ -119,7 +122,7 @@ public class PacienteDAO {
        
    }
                  
-           
+          
                
                
   

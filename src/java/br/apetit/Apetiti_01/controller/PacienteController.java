@@ -2,6 +2,7 @@ package br.apetit.Apetiti_01.controller;
 
 import br.apetit.Apetiti_01.enity.PacienteDTO;
 import br.apetit.Apetiti_01.model.PacienteDAO;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
 import javax.faces.application.FacesMessage;
@@ -10,19 +11,17 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 
-@ManagedBean
+@ManagedBean(name="pacienteController")
 @SessionScoped
 public class PacienteController {
     
-    private PacienteDTO paciente = new PacienteDTO();
-    private List<PacienteDTO> pacientes = new ArrayList<>();
-    private PacienteDAO pacientedao = new PacienteDAO(); 
-    
-    
-    
-    
-    
-        public String AutenticaLogin() {
+      PacienteDTO paciente = new PacienteDTO();
+      List<PacienteDTO> pacientes = new ArrayList<>();
+      PacienteDAO pacientedao = new PacienteDAO();
+      
+     public PacienteController(){} 
+   
+      public String AutenticaLogin() {
         if (paciente.getLogin()!= null) {
             Integer logar  = pacientedao.LogarnoSistema(paciente.getLogin(), paciente.getSenha()); 
             switch (logar) {
@@ -40,13 +39,15 @@ public class PacienteController {
         return null; 
         }        
         
+   
         
-       public void SalvarPaciente(){
+       public void SalvarPaciente()throws ClassNotFoundException, SQLException{
     
-        pacientes.add(paciente); 
-        new PacienteDAO().salvar(paciente);
-        paciente = new PacienteDTO();  
+        //pacientes.add(paciente);
+        pacientedao.salvar(paciente);
+        paciente = new PacienteDTO(); 
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Paciente cadastrado com sucesso!", "Pacinete cadastrado com sucesso!"));  
+        
         }
        
        public void excluir(){
@@ -56,11 +57,11 @@ public class PacienteController {
        }
        public void Editar(){
        pacientedao.Editar(paciente);
-       pacientes = null; 
+      
        
        }
        public void pesquisar(){
-           pacientes = pacientedao.buscar();
+           pacientes= pacientedao.buscar();
        
        }
          
@@ -72,18 +73,19 @@ public class PacienteController {
         this.paciente = paciente;
     }
 
-    public List<PacienteDTO> getClientes() {
-        return pacientes;
-    }
 
     public void setPacintes(List<PacienteDTO> pacientes) {
         this.pacientes = pacientes;
     }
 
-    private Object pacientedao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+  
 
-    
+    public List<PacienteDTO> getPacientes() {
+        return pacientes;
+    }
+
+    public void setPacientes(List<PacienteDTO> pacientes) {
+        this.pacientes = pacientes;
+    }
+   
 }

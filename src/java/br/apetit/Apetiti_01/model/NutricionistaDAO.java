@@ -19,7 +19,7 @@ public class NutricionistaDAO {
     {
         try{
             Connection conexao = DadosConexao.Conectar();
-            PreparedStatement ps = conexao.prepareCall("INSERT INTO TB_Nutricionista('IdNutricionista','nome','dtnascimento','sexo','Cpf','Email','Telefone','Endereco','Formacao','Login','senha','Bairro','Cidade','Complemento')");
+            PreparedStatement ps = conexao.prepareCall("INSERT INTO TB_Nutricionista('nome','dtnascimento','sexo','Cpf','Email','Telefone','Endereco','Formacao','Login','senha','Bairro','Cidade','Complemento')");
             ps.setString(1,nutricionista.getNome());
             ps.setDate(2,new Date(nutricionista.getDtnascimento().getTime())); 
             ps.setString(3, nutricionista.getSexo()); 

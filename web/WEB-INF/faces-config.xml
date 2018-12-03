@@ -39,11 +39,15 @@
             <from-outcome>Vai_NutricionistaPrincipal</from-outcome>
             <to-view-id>/frm_nutricionista.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh_nutricionista</from-outcome>
+            <to-view-id>/Frm_loginNutricionista.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/frm_cadastronutri.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>VoltacadastroNutri</from-outcome>
+            <from-outcome>Volta_Login_Nutri</from-outcome>
             <to-view-id>/Frm_loginNutricionista.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
